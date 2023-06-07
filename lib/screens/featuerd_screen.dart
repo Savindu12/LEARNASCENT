@@ -1,26 +1,20 @@
-import 'package:learnascent_lms/constants/color.dart';
-import 'package:learnascent_lms/constants/size.dart';
-import 'package:learnascent_lms/models/category.dart';
-import 'package:learnascent_lms/screens/course_screen.dart';
-import 'package:learnascent_lms/screens/details_screen.dart';
-import 'package:learnascent_lms/widgets/circle_button.dart';
+import 'package:learnascent_lms/screens/base_screen.dart';
+import 'package:learnascent_lms/screens/profile.dart';
 import 'package:learnascent_lms/widgets/week_card.dart';
-import 'package:learnascent_lms/widgets/date_card.dart';
 import 'package:learnascent_lms/widgets/Lecture_card.dart';
 import 'package:learnascent_lms/widgets/schedule_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../widgets/search_testfield.dart';
-
-class FeaturedScreen extends StatefulWidget {
-  const FeaturedScreen({Key? key}) : super(key: key);
+class ScheduleScreen extends StatefulWidget {
+  const ScheduleScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _FeaturedScreenState createState() => _FeaturedScreenState();
 }
 
-class _FeaturedScreenState extends State<FeaturedScreen> {
+class _FeaturedScreenState extends State<ScheduleScreen> {
   @override
   Widget build(BuildContext context) {
     return const AnnotatedRegion<SystemUiOverlayStyle>(
@@ -44,115 +38,18 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         Padding (
-          padding: const EdgeInsets.only(top: 20),
-          child: WeekCard(),
+          padding: EdgeInsets.only(top: 20),
+          child: MyHomePage(),
         ),
-        const Padding(
+        Padding(
           padding: EdgeInsets.only(top: 20),
           child: lectureCard(),
         ),
-        // Padding(
-        //   padding: const EdgeInsets.only(top: 10, left: 20, right: 20),
-        //   child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //     children: [
-        //       TextButton(
-        //         onPressed: () {},
-        //         child: Text(
-        //           "See All",
-        //           style: Theme.of(context)
-        //               .textTheme
-        //               .bodyMedium
-        //               ?.copyWith(color: kPrimaryColor),
-        //         ),
-        //       )
-        //     ],
-        //   ),
-        // ),
-       const scheduleCard(),
-        // SingleChildScrollView(
-        //   child: SizedBox (
-        //     height: MediaQuery.of(context).size.height, // Adjust the height accordinglyc
-        //     child: GridView.builder(
-        //       shrinkWrap: true,
-        //       padding: const EdgeInsets.symmetric(
-        //         horizontal: 20,
-        //         vertical: 8,
-        //       ),
-        //       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        //         crossAxisCount: 2,
-        //         childAspectRatio: 0.8,
-        //         crossAxisSpacing: 20,
-        //         mainAxisSpacing: 24,
-        //       ),
-        //       itemBuilder: (context, index) {
-        //         return CategoryCard(
-        //           category: categoryList[index],
-        //         );
-        //       },
-        //       itemCount: categoryList.length,
-        //     ),
-        //   ),
-        // )
-
+       scheduleCard(),
       ],
-    );
-  }
-}
-
-class CategoryCard extends StatelessWidget {
-  final Category category;
-  const CategoryCard({
-    Key? key,
-    required this.category,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const CourseScreen(),
-        ),
-      ),
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(.1),
-              blurRadius: 4.0,
-              spreadRadius: .05,
-            ), //BoxShadow
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Align(
-              alignment: Alignment.topRight,
-              child: Image.asset(
-                category.thumbnail,
-                height: kCategoryCardImageSize,
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(category.name),
-            Text(
-              "${category.noOfCourses.toString()} courses",
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
@@ -187,23 +84,43 @@ class AppBar extends StatelessWidget {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Hello,\nGood Morning",
-                style: Theme.of(context).textTheme.titleLarge,
+              IconButton(
+                color: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => BaseScreen()
+                      )
+                  );
+              },
+                icon: Icon(Icons.arrow_back),
               ),
-              CircleButton(
-                icon: Icons.notifications,
-                onPressed: () {},
+              IconButton(
+                color: Colors.white,
+                iconSize: 30,
+                icon: Icon(
+                  Icons.person
+                ),
+                onPressed: () {
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()),
+                );},
               ),
             ],
           ),
           const SizedBox(
-            height: 20,
+            height: 30,
           ),
-          const SearchTextField()
-
+          const Text(
+            'Lecture Schedule',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ],
       ),
     );

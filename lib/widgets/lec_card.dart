@@ -1,16 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:learnascent_lms/models/categoryData.dart';
-import 'package:learnascent_lms/screens/home_screen.dart';
+import 'package:learnascent_lms/screens/lecture_screen.dart';
 
-class CategoryCard extends StatelessWidget {
-  final Category category;
-  final void Function() onSelectCategory;
-
-  const CategoryCard({
-    super.key,
-    required this.category,
-    required this.onSelectCategory,
-  });
+class LecCard extends StatelessWidget {
+  const LecCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +10,7 @@ class CategoryCard extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const HomeScreen(),
+          builder: (context) => const lectureScreen(),
         ),
       ),
       child: Container(
@@ -37,11 +29,11 @@ class CategoryCard extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 15),
+            const Padding(
+              padding: EdgeInsets.only(top: 15),
               child: Text(
-                category.title,
-                style: const TextStyle(
+                'Lecture Materials',
+                style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
@@ -50,7 +42,7 @@ class CategoryCard extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: Image.asset(
-                category.image,
+                'lib/assets/lec.png',
                 height: 120.0,
               ),
             ),

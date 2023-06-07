@@ -15,7 +15,7 @@ class lectureCard extends StatelessWidget {
       ),
       child: const Column (
         children: [
-          Text("25 May 2023",
+          Text("07 June 2023",
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,

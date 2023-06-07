@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:learnascent_lms/screens/assignmentmarks_screen.dart';
+import 'package:learnascent_lms/screens/featuerd_screen.dart';
 
-class MarksCard extends StatelessWidget {
-  const MarksCard({super.key});
+class ScheduleCard extends StatelessWidget {
+  const ScheduleCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class MarksCard extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const assignmentMarks(),
+          builder: (context) => const ScheduleScreen(),
         ),
       ),
       child: Container(
@@ -32,7 +32,7 @@ class MarksCard extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.only(top: 15),
               child: Text(
-                'Exam/Assignment\n Marks',
+                'Lecture Schedule',
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
@@ -42,7 +42,7 @@ class MarksCard extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: Image.asset(
-                'lib/assets/marks.png',
+                'lib/assets/schedule.png',
                 height: 120.0,
               ),
             ),

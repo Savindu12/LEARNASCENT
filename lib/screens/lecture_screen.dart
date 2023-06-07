@@ -1,13 +1,9 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:learnascent_lms/screens/base_screen.dart';
 import 'package:learnascent_lms/screens/profile.dart';
 import 'package:learnascent_lms/widgets/lecture_material.dart';
-import 'package:learnascent_lms/screens/featuerd_screen.dart';
 import 'package:flutter/material.dart';
-
-import '../widgets/circle_button.dart';
-import '../widgets/search_testfield.dart';
 
 class lectureScreen extends StatefulWidget {
 
@@ -86,7 +82,7 @@ class AppBar extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FeaturedScreen()
+                      MaterialPageRoute(builder: (context) => BaseScreen()
                       )
                   );
               },

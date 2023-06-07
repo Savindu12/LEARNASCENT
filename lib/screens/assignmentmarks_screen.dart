@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:learnascent_lms/widgets/marks_card.dart';
-import '../widgets/circle_button.dart';
-import '../widgets/search_testfield.dart';
-import 'package:learnascent_lms/screens/lecture_screen.dart';
-import 'package:learnascent_lms/widgets/marks_card.dart';
+import 'package:learnascent_lms/screens/profile.dart';
 import 'package:learnascent_lms/screens/base_screen.dart';
-import 'package:learnascent_lms/screens/featuerd_screen.dart';
-import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
 
 
 class assignmentMarks extends StatefulWidget {
@@ -21,8 +16,6 @@ class assignmentMarks extends StatefulWidget {
 
 class _assignmentMarksState extends State<assignmentMarks>{
 
-  int _currentIndex = 3;
-  int _selectedIndex = 0;
   Color backgroundColor = const Color(0xFF0C195C);
 
   @override
@@ -258,22 +251,33 @@ class AppBar extends StatelessWidget {
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
                 icon: Icon(Icons.arrow_back),
                 color: Colors.white,
                 onPressed: () {
-                  Navigator.pop(context);
-                },
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => BaseScreen(),
+                      )
+                  );
+              },
               ),
               Align(
                 alignment: Alignment.centerLeft,
-                child:CircleButton(
-                  icon: Icons.person,
-                  onPressed: () {},
-                ) ,
+                child:IconButton(
+                color: Colors.white,
+                iconSize: 30,
+                icon: Icon(
+                  Icons.person
+                ),
+                onPressed: () {
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()),
+                );},
+              ),
               )
             ],
           ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:learnascent_lms/screens/base_screen.dart';
-import 'package:learnascent_lms/screens/Login/welcome_screen.dart';
 import 'package:learnascent_lms/screens/Login/signup_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -67,7 +66,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       ScaffoldMessenger.of(context).clearSnackBars();
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(error.toString() ?? 'Authentication failed.'),
+          content: Text(error.toString()),
         ),
       );
     }

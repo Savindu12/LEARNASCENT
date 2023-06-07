@@ -24,7 +24,7 @@ class lectureMaterial extends StatelessWidget {
                   // Navigate to schedule page
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => FeaturedScreen()),
+                    MaterialPageRoute(builder: (context) => const ScheduleScreen()),
                   );
                 },
                 child: Container(
@@ -32,15 +32,15 @@ class lectureMaterial extends StatelessWidget {
                   height: 120,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(255, 206, 236, 254),
+                    color: const Color.fromARGB(255, 206, 236, 254),
                   ),
                   child: Center(
                     child: Padding(
-                      padding: EdgeInsets.only(bottom: 10, right: 10),
+                      padding: const EdgeInsets.only(bottom: 10, right: 10),
                       child: Align(
                         alignment: Alignment.bottomRight,
                         child: Container(
-                          padding: EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
@@ -72,16 +72,16 @@ class lectureMaterial extends StatelessWidget {
                 height: 120,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Color.fromARGB(255, 239, 224, 255),
+                  color: const Color.fromARGB(255, 239, 224, 255),
                 ),
-                padding: EdgeInsets.only(top: 40),
+                padding: const EdgeInsets.only(top: 40),
                 child: Center(
                   child: Padding(
-                    padding: EdgeInsets.only(bottom: 10, right: 10),
+                    padding: const EdgeInsets.only(bottom: 10, right: 10),
                     child: Align(
                       alignment: Alignment.bottomRight,
                       child: Container(
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
@@ -102,10 +102,10 @@ class lectureMaterial extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Container(
             width: 345,
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             //color: Colors.red,
             decoration: BoxDecoration(
                 color: Colors.white,
@@ -120,7 +120,7 @@ class lectureMaterial extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecurityScreen(title: "IAS")),
+                  MaterialPageRoute(builder: (context) => const SecurityScreen(title: "IAS")),
                 );
               },
               child: Row(
@@ -146,10 +146,10 @@ class lectureMaterial extends StatelessWidget {
 
           ),
 
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Container(
             width: 345,
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             // color: Colors.red,
             decoration: BoxDecoration(
                 color: Colors.white,
@@ -164,7 +164,7 @@ class lectureMaterial extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AMScreen(title: "MATHS")),
+                  MaterialPageRoute(builder: (context) => const AMScreen(title: "MATHS")),
                 );
               },
               child: Row(
@@ -172,13 +172,13 @@ class lectureMaterial extends StatelessWidget {
                   Container(
                     width: 70,
                     height: 70,
-                    child: const Image(image: AssetImage('lib/assets/MATHS.png'),),
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 231, 231, 231),
+                      color: const Color.fromARGB(255, 231, 231, 231),
                       borderRadius: BorderRadius.circular(10),
                     ),
+                    child: const Image(image: AssetImage('lib/assets/MATHS.png'),),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 15,
                   ),
                   const Text(
@@ -192,10 +192,10 @@ class lectureMaterial extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Container(
             width: 345,
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             //color: Colors.red,
             decoration: BoxDecoration(
                 color: Colors.white,
@@ -210,7 +210,7 @@ class lectureMaterial extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => IASScreen(title: 'ADBMS')),
+                  MaterialPageRoute(builder: (context) => const IASScreen(title: 'ADBMS')),
                 );
               },
               child: Row(
@@ -220,7 +220,7 @@ class lectureMaterial extends StatelessWidget {
                     height: 70,
                     child: const Image(image: AssetImage('lib/assets/security.png'),),
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 231, 231, 231),
+                      color: const Color.fromARGB(255, 231, 231, 231),
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
@@ -239,10 +239,10 @@ class lectureMaterial extends StatelessWidget {
             ),
 
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Container(
             width: 345,
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             // color: Colors.red,
             decoration: BoxDecoration(
                 color: Colors.white,
@@ -257,7 +257,7 @@ class lectureMaterial extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => DetailsScreen(title: 'MAD')),
+                  MaterialPageRoute(builder: (context) => const DetailsScreen(title: 'MAD')),
                 );
               },
               child: Row(
@@ -267,11 +267,11 @@ class lectureMaterial extends StatelessWidget {
                     height: 70,
                     child: const Image(image: AssetImage('lib/assets/MAD.png')),
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 231, 231, 231),
+                      color: const Color.fromARGB(255, 231, 231, 231),
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 15,
                   ),
                   const Text(

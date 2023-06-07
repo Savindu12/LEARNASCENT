@@ -1,19 +1,7 @@
-import 'package:learnascent_lms/screens/base_screen.dart';
-import 'package:learnascent_lms/screens/details_screen.dart';
-import 'package:learnascent_lms/screens/home_screen.dart';
-import 'package:learnascent_lms/screens/lecture_screen.dart';
-import 'package:learnascent_lms/screens/userlogin_screen.dart';
 import 'package:learnascent_lms/screens/Login/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:learnascent_lms/widgets/lecture_material.dart';
 import 'firebase_options.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
-import 'package:learnascent_lms/screens/marks_screen.dart';
-
 
 
 void main() async {
@@ -58,7 +46,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: lectureMaterial(),
+      home: UserLogin(),
     );
   }
 }

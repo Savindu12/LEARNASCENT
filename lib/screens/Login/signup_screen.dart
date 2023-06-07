@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-//import 'package:mobile_app/screens/home_screen.dart';
 import 'login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -72,7 +71,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               children: [
                 Container(
                   height: 320,
-                  width: 400,
+                  width: 420,
                   decoration: const BoxDecoration(
                     color: Color(0xff0c195c),
                     borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30),bottomRight: Radius.circular(30)

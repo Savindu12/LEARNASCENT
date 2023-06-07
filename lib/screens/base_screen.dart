@@ -1,23 +1,10 @@
-import 'package:learnascent_lms/constants/color.dart';
-import 'package:learnascent_lms/constants/icons.dart';
-import 'package:learnascent_lms/constants/size.dart';
 import 'package:learnascent_lms/screens/featuerd_screen.dart';
 import 'package:learnascent_lms/screens/assignmentmarks_screen.dart';
 import 'package:learnascent_lms/screens/lecture_screen.dart';
-import 'package:learnascent_lms/layout/BottomNavigation.dart';
-import 'package:learnascent_lms/screens/category_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:learnascent_lms/widgets/week_card.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
-import 'package:learnascent_lms/screens/signup_screen.dart';
-import 'package:learnascent_lms/screens/userlogin_screen.dart';
-import 'package:learnascent_lms/screens/home_screen/home_screen.dart';
-import 'package:learnascent_lms/screens/home_screen/calender.dart';
-import 'package:learnascent_lms/screens/week_screen.dart';
 import 'package:learnascent_lms/screens/profile.dart';
-import 'package:learnascent_lms/screens/home_screen.dart';
-import 'package:learnascent_lms/screens/marks_screen.dart';
-import 'package:learnascent_lms/screens/calender_screen.dart';
+import 'home_screen.dart';
 
 class BaseScreen extends StatefulWidget {
   const BaseScreen({Key? key}) : super(key: key);
@@ -33,8 +20,8 @@ class _BaseScreenState extends State<BaseScreen> {
 
   static final List<Widget> _widgetOptions = <Widget>[
     const lectureScreen(),
-    const FeaturedScreen(),
-    HomePage(),
+    const ScheduleScreen(),
+    const HomeScreen(),
     const assignmentMarks(),
     const ProfileScreen()
   ];

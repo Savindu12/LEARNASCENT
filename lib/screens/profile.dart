@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:learnascent_lms/screens/base_screen.dart';
-import 'package:learnascent_lms/screens/home_screen.dart';
+import 'package:learnascent_lms/screens/Login/welcome_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -52,6 +52,10 @@ class ProfileScreen extends StatelessWidget {
               ),
               onPressed: () {
                 FirebaseAuth.instance.signOut();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const UserLogin()),
+                );
               },
               child: const Text('Logout'),
             ),
@@ -76,7 +80,15 @@ class AppBar extends StatelessWidget {
           bottomLeft: Radius.circular(30),
           bottomRight: Radius.circular(30),
         ),
-        color: Color.fromARGB(255, 12, 25, 92),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          stops: [0.1, 0.5],
+          colors: [
+            Color(0xFF0C195C),
+            Color(0xFF0C119C),
+          ],
+        ),
       ),
       child: Column(
         children: [
@@ -89,7 +101,7 @@ class AppBar extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                    MaterialPageRoute(builder: (context) => BaseScreen(),),
                   );
                 },
                 icon: const Icon(
@@ -123,7 +135,7 @@ class AppBar extends StatelessWidget {
               Align(
                 alignment: Alignment.center,
                 child: Image.asset(
-                  'assets/images/profile.png',
+                  'lib/assets/profile.png',
                   height: 100.0,
                 ),
               ),
