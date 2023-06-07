@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "305207723729",
+    "project_id": "learnascent-lms",
+    "storage_bucket": "learnascent-lms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305207723729:android:ebc83c968a62d30cfd27f0",
+        "android_client_info": {
+          "package_name": "com.example.learnascent_lms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305207723729-s4ju31gjkv3t2c3ubt0io2unkgk5nqd6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfyBGLKIzvNWO8FCI4V8qAkxmuDH8ngho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305207723729-s4ju31gjkv3t2c3ubt0io2unkgk5nqd6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "305207723729-ibs5238arksv19v01e571t8aoic5efaf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.learnascentLms.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
