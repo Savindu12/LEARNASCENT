@@ -1,7 +1,8 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class lectureCard extends StatelessWidget {
-
   const lectureCard({super.key});
 
   @override
@@ -13,20 +14,22 @@ class lectureCard extends StatelessWidget {
         color: Colors.blue[300],
         borderRadius: BorderRadius.circular(16),
       ),
-      child: const Column (
+      child: const Column(
         children: [
-          Text("07 June 2023",
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-          ),
-
-          Text("Wednesday",
+          Text(
+            "07 June 2023",
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-            ),),
+            ),
+          ),
+          Text(
+            "Wednesday",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ],
       ),
     );

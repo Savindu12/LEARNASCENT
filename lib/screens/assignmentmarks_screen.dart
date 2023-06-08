@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:learnascent_lms/screens/profile.dart';
-import 'package:learnascent_lms/screens/base_screen.dart';
+//import 'package:learnascent_lms/screens/base_screen.dart';
 
-
-
+// ignore: camel_case_types
 class assignmentMarks extends StatefulWidget {
-
-  const assignmentMarks ({Key? key}) : super(key: key);
+  const assignmentMarks({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _assignmentMarksState createState() => _assignmentMarksState();
-
 }
 
-class _assignmentMarksState extends State<assignmentMarks>{
-
+// ignore: camel_case_types
+class _assignmentMarksState extends State<assignmentMarks> {
   Color backgroundColor = const Color(0xFF0C195C);
 
   @override
@@ -25,10 +23,7 @@ class _assignmentMarksState extends State<assignmentMarks>{
       child: Scaffold(
         body: SingleChildScrollView(
           child: Column(
-            children: [
-              AppBar(),
-              Body()
-           ],
+            children: [AppBar(), Body()],
           ),
         ),
       ),
@@ -37,11 +32,12 @@ class _assignmentMarksState extends State<assignmentMarks>{
 }
 
 class Body extends StatelessWidget {
-  const Body ({Key? key}): super (key: key);
+  const Body({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    // ignore: sized_box_for_whitespace
+    return Container(
       height: 500, // Set the desired height
       child: GridView(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -51,6 +47,7 @@ class Body extends StatelessWidget {
         ),
         children: [
           // Grid items go here
+          // ignore: avoid_unnecessary_containers
           Container(
             child: const SizedBox(
               width: 170.0,
@@ -65,7 +62,8 @@ class Body extends StatelessWidget {
                       children: [
                         SizedBox(height: 10.0),
                         Text(
-                          "MAD Group Assignment", textAlign: TextAlign.center,
+                          "MAD Group Assignment",
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -73,17 +71,20 @@ class Body extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 25.0),
-                        Text("Completed", style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15.0
-                        )),
+                        Text("Completed",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15.0)),
                         SizedBox(height: 5.0),
-                        Text("Marks: 90%", textAlign: TextAlign.center, style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25.0
-                        ),),
+                        Text(
+                          "Marks: 90%",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25.0),
+                        ),
                       ],
                     ),
                   ),
@@ -91,6 +92,7 @@ class Body extends StatelessWidget {
               ),
             ),
           ),
+          // ignore: avoid_unnecessary_containers
           Container(
             child: const SizedBox(
               width: 170.0,
@@ -105,7 +107,8 @@ class Body extends StatelessWidget {
                       children: [
                         SizedBox(height: 10.0),
                         Text(
-                          "Cryptography Final Quiz", textAlign: TextAlign.center,
+                          "Cryptography Final Quiz",
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -113,17 +116,22 @@ class Body extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 25.0),
-                        Text("Completed", style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15.0
-                        ),),
+                        Text(
+                          "Completed",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15.0),
+                        ),
                         SizedBox(height: 5.0),
-                        Text("Marks: 88%", textAlign: TextAlign.center, style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25.0
-                        ),),
+                        Text(
+                          "Marks: 88%",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25.0),
+                        ),
                       ],
                     ),
                   ),
@@ -131,46 +139,52 @@ class Body extends StatelessWidget {
               ),
             ),
           ),
+          // ignore: avoid_unnecessary_containers
           Container(
-           child: const SizedBox(
-             width: 170.0,
-             height: 180.0,
-             child: Card(
-               color: Color.fromARGB(240, 61, 241, 91),
-               elevation: 2.0,
-               child: Center(
-                 child: Padding(
-                   padding: EdgeInsets.all(10.0),
-                   child: Column(
-                     children: [
-                       SizedBox(height: 10.0),
-                       Text(
-                         "IAS Coursework", textAlign: TextAlign.center,
-                         style: TextStyle(
-                           color: Colors.black,
-                           fontWeight: FontWeight.bold,
-                           fontSize: 20.0,
-                         ),
-                       ),
-                       SizedBox(height: 25.0),
-                       Text("Completed", style: TextStyle(
-                           color: Colors.black,
-                           fontWeight: FontWeight.bold,
-                           fontSize: 15.0
-                       )),
-                       SizedBox(height: 5.0),
-                       Text("Marks: 75%", textAlign: TextAlign.center, style: TextStyle(
-                           color: Colors.black,
-                           fontWeight: FontWeight.bold,
-                           fontSize: 25.0
-                       ),),
-                     ],
-                   ),
-                 ),
-               ),
-             ),
-           ),
+            child: const SizedBox(
+              width: 170.0,
+              height: 180.0,
+              child: Card(
+                color: Color.fromARGB(240, 61, 241, 91),
+                elevation: 2.0,
+                child: Center(
+                  child: Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 10.0),
+                        Text(
+                          "IAS Coursework",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20.0,
+                          ),
+                        ),
+                        SizedBox(height: 25.0),
+                        Text("Completed",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15.0)),
+                        SizedBox(height: 5.0),
+                        Text(
+                          "Marks: 75%",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25.0),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ),
+          // ignore: avoid_unnecessary_containers
           Container(
             child: const SizedBox(
               width: 170.0,
@@ -185,7 +199,8 @@ class Body extends StatelessWidget {
                       children: [
                         SizedBox(height: 10.0),
                         Text(
-                          "Maths Mid Exam", textAlign: TextAlign.center,
+                          "Maths Mid Exam",
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -193,19 +208,19 @@ class Body extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 25.0),
-                        Text("Completed", style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15.0
-                        )),
+                        Text("Completed",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15.0)),
                         SizedBox(height: 5.0),
                         Text(
-                          "Marks: 95%", textAlign: TextAlign.center,
+                          "Marks: 95%",
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
-                              fontSize: 25.0
-                          ),
+                              fontSize: 25.0),
                         ),
                       ],
                     ),
@@ -222,7 +237,6 @@ class Body extends StatelessWidget {
 }
 
 class AppBar extends StatelessWidget {
-
   const AppBar({
     Key? key,
   }) : super(key: key);
@@ -254,30 +268,26 @@ class AppBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                icon: Icon(Icons.arrow_back),
+                icon: const Icon(Icons.arrow_back),
                 color: Colors.white,
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => BaseScreen(),
-                      )
-                  );
-              },
+                  Navigator.pop(context);
+                },
               ),
               Align(
                 alignment: Alignment.centerLeft,
-                child:IconButton(
-                color: Colors.white,
-                iconSize: 30,
-                icon: Icon(
-                  Icons.person
+                child: IconButton(
+                  color: Colors.white,
+                  iconSize: 30,
+                  icon: const Icon(Icons.person),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProfileScreen()),
+                    );
+                  },
                 ),
-                onPressed: () {
-                  Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ProfileScreen()),
-                );},
-              ),
               )
             ],
           ),
@@ -296,5 +306,4 @@ class AppBar extends StatelessWidget {
       ),
     );
   }
-
 }

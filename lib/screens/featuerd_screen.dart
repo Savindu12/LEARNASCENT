@@ -1,4 +1,3 @@
-import 'package:learnascent_lms/screens/base_screen.dart';
 import 'package:learnascent_lms/screens/profile.dart';
 import 'package:learnascent_lms/widgets/week_card.dart';
 import 'package:learnascent_lms/widgets/Lecture_card.dart';
@@ -40,7 +39,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        Padding (
+        Padding(
           padding: EdgeInsets.only(top: 20),
           child: MyHomePage(),
         ),
@@ -48,7 +47,7 @@ class Body extends StatelessWidget {
           padding: EdgeInsets.only(top: 20),
           child: lectureCard(),
         ),
-       scheduleCard(),
+        scheduleCard(),
       ],
     );
   }
@@ -88,25 +87,21 @@ class AppBar extends StatelessWidget {
               IconButton(
                 color: Colors.white,
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => BaseScreen()
-                      )
-                  );
-              },
-                icon: Icon(Icons.arrow_back),
+                  Navigator.pop(context);
+                },
+                icon: const Icon(Icons.arrow_back),
               ),
               IconButton(
                 color: Colors.white,
                 iconSize: 30,
-                icon: Icon(
-                  Icons.person
-                ),
+                icon: const Icon(Icons.person),
                 onPressed: () {
                   Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ProfileScreen()),
-                );},
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfileScreen()),
+                  );
+                },
               ),
             ],
           ),

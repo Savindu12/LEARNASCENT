@@ -6,8 +6,8 @@ import 'package:learnascent_lms/screens/LecureRouting/Security_Screen.dart';
 import 'package:learnascent_lms/screens/featuerd_screen.dart';
 import 'package:learnascent_lms/screens/assignmentmarks_screen.dart';
 
+// ignore: camel_case_types
 class lectureMaterial extends StatelessWidget {
-
   const lectureMaterial({super.key});
 
   @override
@@ -24,7 +24,8 @@ class lectureMaterial extends StatelessWidget {
                   // Navigate to schedule page
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ScheduleScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const ScheduleScreen()),
                   );
                 },
                 child: Container(
@@ -64,41 +65,42 @@ class lectureMaterial extends StatelessWidget {
                   // Navigate to marks page
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const assignmentMarks()),
+                    MaterialPageRoute(
+                        builder: (context) => const assignmentMarks()),
                   );
                 },
-              child: Container(
-                width: 175,
-                height: 120,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: const Color.fromARGB(255, 239, 224, 255),
-                ),
-                padding: const EdgeInsets.only(top: 40),
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 10, right: 10),
-                    child: Align(
-                      alignment: Alignment.bottomRight,
-                      child: Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Text(
-                          'Marks',
-                          style: TextStyle(
-                            color: Colors.pinkAccent,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                child: Container(
+                  width: 175,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: const Color.fromARGB(255, 239, 224, 255),
+                  ),
+                  padding: const EdgeInsets.only(top: 40),
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 10, right: 10),
+                      child: Align(
+                        alignment: Alignment.bottomRight,
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: const Text(
+                            'Marks',
+                            style: TextStyle(
+                              color: Colors.pinkAccent,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
               ),
             ],
           ),
@@ -120,15 +122,19 @@ class lectureMaterial extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SecurityScreen(title: "IAS")),
+                  MaterialPageRoute(
+                      builder: (context) => const SecurityScreen(title: "IAS")),
                 );
               },
               child: Row(
                 children: [
+                  // ignore: sized_box_for_whitespace
                   Container(
                     width: 70,
                     height: 70,
-                    child: const Image(image: AssetImage('lib/assets/cyber-security.png'),),
+                    child: const Image(
+                      image: AssetImage('lib/assets/cyber-security.png'),
+                    ),
                   ),
                   const SizedBox(
                     width: 15,
@@ -141,11 +147,9 @@ class lectureMaterial extends StatelessWidget {
                         fontSize: 20),
                   )
                 ],
-              ) ,
+              ),
             ),
-
           ),
-
           const SizedBox(height: 15),
           Container(
             width: 345,
@@ -164,7 +168,8 @@ class lectureMaterial extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const AMScreen(title: "MATHS")),
+                  MaterialPageRoute(
+                      builder: (context) => const AMScreen(title: "MATHS")),
                 );
               },
               child: Row(
@@ -176,7 +181,9 @@ class lectureMaterial extends StatelessWidget {
                       color: const Color.fromARGB(255, 231, 231, 231),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: const Image(image: AssetImage('lib/assets/MATHS.png'),),
+                    child: const Image(
+                      image: AssetImage('lib/assets/MATHS.png'),
+                    ),
                   ),
                   const SizedBox(
                     width: 15,
@@ -210,7 +217,8 @@ class lectureMaterial extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const IASScreen(title: 'ADBMS')),
+                  MaterialPageRoute(
+                      builder: (context) => const IASScreen(title: 'ADBMS')),
                 );
               },
               child: Row(
@@ -218,10 +226,12 @@ class lectureMaterial extends StatelessWidget {
                   Container(
                     width: 70,
                     height: 70,
-                    child: const Image(image: AssetImage('lib/assets/security.png'),),
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 231, 231, 231),
                       borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Image(
+                      image: AssetImage('lib/assets/security.png'),
                     ),
                   ),
                   const SizedBox(
@@ -237,7 +247,6 @@ class lectureMaterial extends StatelessWidget {
                 ],
               ),
             ),
-
           ),
           const SizedBox(height: 15),
           Container(
@@ -257,7 +266,8 @@ class lectureMaterial extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const DetailsScreen(title: 'MAD')),
+                  MaterialPageRoute(
+                      builder: (context) => const DetailsScreen(title: 'MAD')),
                 );
               },
               child: Row(
@@ -265,11 +275,11 @@ class lectureMaterial extends StatelessWidget {
                   Container(
                     width: 70,
                     height: 70,
-                    child: const Image(image: AssetImage('lib/assets/MAD.png')),
                     decoration: BoxDecoration(
                       color: const Color.fromARGB(255, 231, 231, 231),
                       borderRadius: BorderRadius.circular(10),
                     ),
+                    child: const Image(image: AssetImage('lib/assets/MAD.png')),
                   ),
                   const SizedBox(
                     width: 15,
@@ -290,5 +300,4 @@ class lectureMaterial extends StatelessWidget {
       ),
     );
   }
-
 }

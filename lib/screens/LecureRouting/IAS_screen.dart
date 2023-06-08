@@ -1,9 +1,10 @@
+// ignore: file_names
 import 'package:learnascent_lms/constants/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:learnascent_lms/screens/LecureRouting/LetureCards/IAS_Card.dart';
+import 'package:learnascent_lms/screens/lecture_screen.dart';
 import 'package:learnascent_lms/widgets/IAS_lesson_card.dart';
-import 'package:learnascent_lms/screens/base_screen.dart';
 
 class IASScreen extends StatefulWidget {
   final String title;
@@ -13,6 +14,7 @@ class IASScreen extends StatefulWidget {
   }) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _DetailsScreenState createState() => _DetailsScreenState();
 }
 
@@ -44,24 +46,27 @@ class _DetailsScreenState extends State<IASScreen> {
                           onPressed: () {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => BaseScreen()
-                                )
-                            );
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const lectureScreen()));
                           },
-                          icon: Icon(Icons.arrow_back,)
-                      ),
+                          icon: const Icon(
+                            Icons.arrow_back,
+                          )),
                     ],
                   ),
                 ),
+                // ignore: sized_box_for_whitespace
                 Container(
                   width: 370,
                   height: 170,
-                  child: const Image(image: AssetImage('lib/assets/security.png'),),
+                  child: const Image(
+                    image: AssetImage('lib/assets/security.png'),
+                  ),
                 ),
                 const SizedBox(
                   height: 55,
                 ),
-
                 const SizedBox(
                   height: 15,
                 ),
@@ -76,7 +81,7 @@ class _DetailsScreenState extends State<IASScreen> {
                   height: 3,
                 ),
                 const Text(
-                  "Mr. Nagi Saranavabavan ",
+                  "Mr. Naji Saranavabavan ",
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
@@ -85,13 +90,13 @@ class _DetailsScreenState extends State<IASScreen> {
                 const SizedBox(
                   height: 15,
                 ),
-                Row(
+                const Row(
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.dashboard,
                       color: Colors.grey,
                     ),
-                    const Text(
+                    Text(
                       " 1st Semester",
                       style: TextStyle(
                         color: Colors.grey,
@@ -204,97 +209,6 @@ class _CustomTabViewState extends State<CustomTabView> {
             .entries
             .map((MapEntry map) => _buildTags(map.key))
             .toList(),
-      ),
-    );
-  }
-}
-
-class EnrollBottomSheet extends StatefulWidget {
-  const EnrollBottomSheet({Key? key}) : super(key: key);
-
-  @override
-  _EnrollBottomSheetState createState() => _EnrollBottomSheetState();
-}
-
-class _EnrollBottomSheetState extends State<EnrollBottomSheet> {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 30.0,
-      ),
-      child: Row(
-        children: [
-          CustomIconButton(
-            onTap: () {},
-            height: 45,
-            width: 45,
-            child: const Icon(
-              Icons.favorite,
-              color: Colors.pink,
-              size: 30,
-            ),
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          Expanded(
-            child: CustomIconButton(
-              onTap: () {},
-              color: kPrimaryColor,
-              height: 45,
-              width: 45,
-              child: const Text(
-                "Enroll Now",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class CustomIconButton extends StatelessWidget {
-  final Widget child;
-  final double height;
-  final double width;
-  final Color? color;
-  final VoidCallback onTap;
-
-  const CustomIconButton({
-    Key? key,
-    required this.child,
-    required this.height,
-    required this.width,
-    this.color = Colors.white,
-    required this.onTap,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Ink(
-      child: InkWell(
-        borderRadius: BorderRadius.circular(12),
-        child: Center(child: child),
-        onTap: onTap,
-      ),
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(.1),
-            blurRadius: 2.0,
-            spreadRadius: .05,
-          ), //BoxShadow
-        ],
       ),
     );
   }

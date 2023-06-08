@@ -9,7 +9,6 @@ import 'package:flutter_timeline_calendar/timeline/utils/datetime_extension.dart
 import 'package:flutter_timeline_calendar/timeline/widget/timeline_calendar.dart';
 
 class MyHomePage extends StatefulWidget {
-
   const MyHomePage({super.key});
 
   @override
@@ -35,10 +34,9 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
-   return TimelineCalendar(
+    return TimelineCalendar(
       calendarType: CalendarType.GREGORIAN,
       calendarLanguage: "en",
       calendarOptions: CalendarOptions(
@@ -56,30 +54,33 @@ class _MyHomePageState extends State<MyHomePage> {
           weekDaySelectedColor: const Color(0xff3AC3E2),
           differentStyleForToday: true,
           todayBackgroundColor: Colors.black,
-          todayTextColor: Colors.white
-          ),
+          todayTextColor: Colors.white),
       headerOptions: HeaderOptions(
           weekDayStringType: WeekDayStringTypes.SHORT,
           monthStringType: MonthStringTypes.FULL,
-          backgroundColor: Color.fromARGB(255, 232, 199, 117),
+          backgroundColor: const Color.fromARGB(255, 232, 199, 117),
           headerTextSize: 20,
           headerTextColor: Colors.black),
       onChangeDateTime: (dateTime) {
+        // ignore: avoid_print
         print("Date Change $dateTime");
         selectedDateTime = dateTime;
         getLatestWeek();
       },
       onDateTimeReset: (resetDateTime) {
+        // ignore: avoid_print
         print("Date Reset $resetDateTime");
         selectedDateTime = resetDateTime;
         getLatestWeek();
       },
       onMonthChanged: (monthDateTime) {
+        // ignore: avoid_print
         print("Month Change $monthDateTime");
         selectedDateTime = monthDateTime;
         getLatestWeek();
       },
       onYearChanged: (yearDateTime) {
+        // ignore: avoid_print
         print("Year Change $yearDateTime");
         selectedDateTime = yearDateTime;
         getLatestWeek();
@@ -87,5 +88,4 @@ class _MyHomePageState extends State<MyHomePage> {
       dateTime: selectedDateTime,
     );
   }
-
 }

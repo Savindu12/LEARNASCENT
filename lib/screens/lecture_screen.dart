@@ -1,21 +1,20 @@
-
 import 'package:flutter/services.dart';
 import 'package:learnascent_lms/screens/base_screen.dart';
 import 'package:learnascent_lms/screens/profile.dart';
 import 'package:learnascent_lms/widgets/lecture_material.dart';
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class lectureScreen extends StatefulWidget {
-
-  const lectureScreen ({Key? key}) : super(key: key);
+  const lectureScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _lectureScreenState createState() => _lectureScreenState();
-
 }
 
+// ignore: camel_case_types
 class _lectureScreenState extends State<lectureScreen> {
-
   @override
   Widget build(BuildContext context) {
     return const AnnotatedRegion<SystemUiOverlayStyle>(
@@ -34,15 +33,12 @@ class _lectureScreenState extends State<lectureScreen> {
   }
 }
 
-
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: lectureMaterial(),
-    );
+    return const lectureMaterial();
   }
 }
 
@@ -80,25 +76,25 @@ class AppBar extends StatelessWidget {
               IconButton(
                 color: Colors.white,
                 onPressed: () {
+                  Navigator.pop(context);
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => BaseScreen()
-                      )
+                    context,
+                    MaterialPageRoute(builder: (context) => const BaseScreen()),
                   );
-              },
-                icon: Icon(Icons.arrow_back),
+                },
+                icon: const Icon(Icons.arrow_back),
               ),
               IconButton(
                 color: Colors.white,
                 iconSize: 30,
-                icon: Icon(
-                  Icons.person
-                ),
+                icon: const Icon(Icons.person),
                 onPressed: () {
                   Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ProfileScreen()),
-                );},
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfileScreen()),
+                  );
+                },
               ),
             ],
           ),

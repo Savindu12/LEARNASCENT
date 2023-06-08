@@ -75,7 +75,6 @@ flutter:
     - lib/assets/MATHS.png
     - lib/assets/HorizontalLogo.png
     - lib/assets/VerticleLogo.png
-    - lib/assets/mobile.jpg
     - lib/assets/security.png
     - lib/assets/cyber-security.png
     - lib/assets/profile.png

@@ -2,8 +2,8 @@ import 'package:learnascent_lms/constants/color.dart';
 import 'package:learnascent_lms/models/lesson.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:learnascent_lms/screens/lecture_screen.dart';
 import '../widgets/lesson_card.dart';
-import 'base_screen.dart';
 
 class DetailsScreen extends StatefulWidget {
   final String title;
@@ -13,6 +13,7 @@ class DetailsScreen extends StatefulWidget {
   }) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _DetailsScreenState createState() => _DetailsScreenState();
 }
 
@@ -44,19 +45,23 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           onPressed: () {
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => BaseScreen()
-                                )
-                            );
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const lectureScreen()));
                           },
-                          icon: Icon(Icons.arrow_back,)
-                      ),
+                          icon: const Icon(
+                            Icons.arrow_back,
+                          )),
                     ],
                   ),
                 ),
+                // ignore: sized_box_for_whitespace
                 Container(
                   width: 370,
                   height: 170,
-                  child: const Image(image: AssetImage('lib/assets/MAD.png'),),
+                  child: const Image(
+                    image: AssetImage('lib/assets/MAD.png'),
+                  ),
                 ),
                 const SizedBox(
                   height: 55,
@@ -85,13 +90,13 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 const SizedBox(
                   height: 15,
                 ),
-                Row(
+                const Row(
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.dashboard,
                       color: Colors.grey,
                     ),
-                    const Text(
+                    Text(
                       " 1st Semester",
                       style: TextStyle(
                         color: Colors.grey,
@@ -209,56 +214,6 @@ class _CustomTabViewState extends State<CustomTabView> {
   }
 }
 
-class EnrollBottomSheet extends StatefulWidget {
-  const EnrollBottomSheet({Key? key}) : super(key: key);
-
-  @override
-  _EnrollBottomSheetState createState() => _EnrollBottomSheetState();
-}
-
-class _EnrollBottomSheetState extends State<EnrollBottomSheet> {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 30.0,
-      ),
-      child: Row(
-        children: [
-          CustomIconButton(
-            onTap: () {},
-            height: 45,
-            width: 45,
-            child: const Icon(
-              Icons.favorite,
-              color: Colors.pink,
-              size: 30,
-            ),
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          Expanded(
-            child: CustomIconButton(
-              onTap: () {},
-              color: kPrimaryColor,
-              height: 45,
-              width: 45,
-              child: const Text(
-                "Enroll Now",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
-
 class CustomIconButton extends StatelessWidget {
   final Widget child;
   final double height;
@@ -278,11 +233,6 @@ class CustomIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Ink(
-      child: InkWell(
-        borderRadius: BorderRadius.circular(12),
-        child: Center(child: child),
-        onTap: onTap,
-      ),
       height: height,
       width: width,
       decoration: BoxDecoration(
@@ -295,6 +245,11 @@ class CustomIconButton extends StatelessWidget {
             spreadRadius: .05,
           ), //BoxShadow
         ],
+      ),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        onTap: onTap,
+        child: Center(child: child),
       ),
     );
   }

@@ -14,25 +14,6 @@ class ProfileScreen extends StatelessWidget {
           children: [
             const AppBar(),
             const Body(),
-            ElevatedButton(
-              style: ButtonStyle(
-                textStyle: MaterialStateProperty.all(
-                  const TextStyle(fontSize: 20),
-                ),
-                backgroundColor: MaterialStateProperty.all(
-                  const Color.fromARGB(255, 12, 25, 92),
-                ),
-                foregroundColor: MaterialStateProperty.all(Colors.white),
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                ),
-                fixedSize: MaterialStateProperty.all(const Size(150, 40)),
-              ),
-              onPressed: () {},
-              child: const Text('Edit Profile'),
-            ),
             const SizedBox(height: 25),
             ElevatedButton(
               style: ButtonStyle(
@@ -101,7 +82,9 @@ class AppBar extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => BaseScreen(),),
+                    MaterialPageRoute(
+                      builder: (context) => const BaseScreen(),
+                    ),
                   );
                 },
                 icon: const Icon(

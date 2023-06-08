@@ -55,7 +55,7 @@ class AppBar extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(
-            height: 40,
+            height: 70,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -134,4 +134,3 @@ class Body extends StatelessWidget {
     );
   }
 }
-

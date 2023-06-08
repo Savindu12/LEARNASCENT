@@ -3,8 +3,6 @@ import 'package:learnascent_lms/screens/base_screen.dart';
 import 'package:learnascent_lms/screens/Login/signup_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-final _firebase = FirebaseAuth.instance;
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -46,13 +44,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     _form.currentState!.save();
 
     try {
-      FirebaseAuth.instance.signInWithEmailAndPassword(
+      FirebaseAuth.instance
+          .signInWithEmailAndPassword(
         email: _enteredEmail,
         password: _enteredPassword,
-      ).then((_) {
+      )
+          .then((_) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => BaseScreen()),
+          MaterialPageRoute(builder: (context) => const BaseScreen()),
         );
       }).catchError((error) {
         ScaffoldMessenger.of(context).clearSnackBars();
@@ -77,125 +77,123 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     return Scaffold(
       body: SingleChildScrollView(
           child: Form(
-            key: _form,
-            child: Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
-                  width: double.infinity,
-                  child: Image.asset('lib/assets/VerticleLogo.png'),
+        key: _form,
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+              width: double.infinity,
+              child: Image.asset('lib/assets/VerticleLogo.png'),
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              child: _header(context),
+            ),
+            const SizedBox(height: 20),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: TextFormField(
+                controller: emailController,
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  fillColor: Colors.grey.shade100,
+                  filled: true,
+                  prefixIcon: const Icon(Icons.person),
+                  labelText: 'Email',
                 ),
-                Container(
-                  alignment: Alignment.centerLeft,
-                  child: _header(context),
+                keyboardType: TextInputType.emailAddress,
+                autocorrect: false,
+                textCapitalization: TextCapitalization.none,
+                validator: (value) {
+                  if (value == null ||
+                      value.trim().isEmpty ||
+                      !value.contains('@')) {
+                    return 'Please enter a valid email address.';
+                  }
+                  return null;
+                },
+                onSaved: (value) {
+                  _enteredEmail = value!;
+                },
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child: TextFormField(
+                obscureText: true,
+                controller: passwordController,
+                decoration: InputDecoration(
+                  hintText: "**********",
+                  border: const OutlineInputBorder(),
+                  fillColor: Colors.grey.shade100,
+                  filled: true,
+                  prefixIcon: const Icon(Icons.lock_clock_outlined),
+                  labelText: 'Password',
                 ),
-                const SizedBox(height: 20),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  child: TextFormField(
-                    controller: emailController,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      fillColor: Colors.grey.shade100,
-                      filled: true,
-                      prefixIcon: Icon(Icons.person),
-                      labelText: 'Email',
+                validator: (value) {
+                  if (value == null || value.trim().length < 6) {
+                    return 'Password must be at least 6 characters long';
+                  }
+                  return null;
+                },
+                onSaved: (value) {
+                  _enteredPassword = value!;
+                },
+              ),
+            ),
+            const SizedBox(height: 30),
+            Container(
+                height: 50,
+                padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    textStyle: MaterialStateProperty.all(
+                      const TextStyle(fontSize: 25),
                     ),
-                    keyboardType: TextInputType.emailAddress,
-                    autocorrect: false,
-                    textCapitalization: TextCapitalization.none,
-                    validator: (value) {
-                      if (value == null ||
-                          value.trim().isEmpty ||
-                          !value.contains('@')) {
-                        return 'Please enter a valid email address.';
-                      }
-                      return null;
-                    },
-                    onSaved: (value) {
-                      _enteredEmail = value!;
-                    },
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-                  child: TextFormField(
-                    obscureText: true,
-                    controller: passwordController,
-                    decoration: InputDecoration(
-                      hintText: "**********",
-                      border: OutlineInputBorder(),
-                      fillColor: Colors.grey.shade100,
-                      filled: true,
-                      prefixIcon: Icon(Icons.lock_clock_outlined),
-                      labelText: 'Password',
+                    backgroundColor: MaterialStateProperty.all(
+                      const Color.fromARGB(255, 12, 25, 92),
                     ),
-                    validator: (value) {
-                      if (value == null || value.trim().length < 6) {
-                        return 'Password must be at least 6 characters long';
-                      }
-                      return null;
-                    },
-                    onSaved: (value) {
-                      _enteredPassword = value!;
-                    },
+                    foregroundColor: MaterialStateProperty.all(Colors.white),
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
+                    fixedSize: MaterialStateProperty.all(const Size(250, 40)),
                   ),
-                ),
-                const SizedBox(height: 30),
-
-                Container(
-                    height: 50,
-                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        textStyle: MaterialStateProperty.all(
-                          const TextStyle(fontSize: 25),
-                        ),
-                        backgroundColor: MaterialStateProperty.all(
-                          const Color.fromARGB(255, 12, 25, 92),
-                        ),
-                        foregroundColor: MaterialStateProperty.all(Colors.white),
-                        shape: MaterialStateProperty.all(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
-                        fixedSize: MaterialStateProperty.all(const Size(250, 40)),
-                      ),
-                      onPressed: () => _submit(),
-                      child: const Text(
-                        "Sign In to LearnAscent",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                        ),
-                      ),
-                    )
-                ),
-                const SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    const Text('Do not have an account?'),
-                    TextButton(
-                      child: const Text(
-                        'Sign Up',
-                        style: TextStyle(
-                            fontSize: 20, color: Color.fromARGB(255, 248, 180, 50)),
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const SignUpScreen()),
-                        );
-                      },
-                    )
-                  ],
-                ),
+                  onPressed: () => _submit(),
+                  child: const Text(
+                    "Sign In to LearnAscent",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                  ),
+                )),
+            const SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                const Text('Do not have an account?'),
+                TextButton(
+                  child: const Text(
+                    'Sign Up',
+                    style: TextStyle(
+                        fontSize: 20, color: Color.fromARGB(255, 248, 180, 50)),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpScreen()),
+                    );
+                  },
+                )
               ],
             ),
-          )),
+          ],
+        ),
+      )),
     );
   }
 }
@@ -206,8 +204,8 @@ _header(context) {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Padding(
-          padding: EdgeInsets.only(left: 20),
-        child:  Text(
+        padding: EdgeInsets.only(left: 20),
+        child: Text(
           "Welcome Back!",
           style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
         ),
