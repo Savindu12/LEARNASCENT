@@ -15,14 +15,14 @@ class BaseScreen extends StatefulWidget {
 }
 
 class _BaseScreenState extends State<BaseScreen> {
-  int _currentIndex = 0;
+  int _currentIndex = 2;
   Color backgroundColor = const Color(0xFF0C195C);
-  final PageController _pageController = PageController();
+  final PageController _pageController = PageController(initialPage: 2);
 
   static final List<Widget> _widgetOptions = <Widget>[
-    const HomeScreen(),
     const lectureScreen(),
     const ScheduleScreen(),
+    const HomeScreen(),
     const assignmentMarks(),
     const ProfileScreen()
   ];
@@ -67,12 +67,7 @@ class BaseFooter extends StatelessWidget {
   }) : super(key: key);
 
   final List<SalomonBottomBarItem> _navBarOptions = [
-    SalomonBottomBarItem(
-      icon: const Icon(Icons.home),
-      title: const Text("Home"),
-      unselectedColor: const Color(0xfff6f6f6),
-      selectedColor: Colors.orangeAccent,
-    ),
+    
     SalomonBottomBarItem(
       icon: const Icon(Icons.book),
       title: const Text("Lectures"),
@@ -82,6 +77,12 @@ class BaseFooter extends StatelessWidget {
     SalomonBottomBarItem(
       icon: const Icon(Icons.schedule),
       title: const Text("Schedule"),
+      unselectedColor: const Color(0xfff6f6f6),
+      selectedColor: Colors.orangeAccent,
+    ),
+    SalomonBottomBarItem(
+      icon: const Icon(Icons.home),
+      title: const Text("Home"),
       unselectedColor: const Color(0xfff6f6f6),
       selectedColor: Colors.orangeAccent,
     ),
